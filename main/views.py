@@ -8,7 +8,7 @@ from main.models import ToDoList
 
 def index(response, id):
     to_do_list = ToDoList.objects.get(id=id)
-    return render(response, "main/base.html", {})
+    return render(response, "main/list.html", {"to_do_list":to_do_list})
 
 
 def home(response):
