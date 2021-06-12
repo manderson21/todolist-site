@@ -1,3 +1,2 @@
-from main.views.index import index1
-from main.views.home import home
-from main.views.create import create
+from main.views.viewIndex import home
+from main.views.viewForms import *
