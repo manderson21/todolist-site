@@ -3,19 +3,22 @@
 
 {% block content %}
     <h1>{{ to_do_list.name }}</h1>
-    <form method="post" action="#">
+    <form method="post" action="#" class="form-group">
         {% csrf_token %}
-        <ul>
             {% for item in to_do_list.item_set.all %}
+                <div class="form-check mb-0 border-bottom">
                 {% if item.complete == True %}
-                    <li><input type="checkbox" value="clicked" name="c{{ item.id }}" checked>{{ item.text }}</li>
+                    <input id="c{{ item.id }}" class="form-check-input" type="checkbox" value="clicked" name="c{{ item.id }}" checked>
                 {% else %}
-                    <li><input type="checkbox" value="clicked" name="c{{ item.id }}">{{ item.text }}</li>
+                    <input id="c{{ item.id }}" class="form-check-input" type="checkbox" value="clicked" name="c{{ item.id }}">
                 {% endif %}
+                    <label class="form-check-label" for="c{{ item.id }}">{{ item.text }}</label>
+                </div>
             {% endfor %}
-        </ul>
-        <button type="submit" name="save" value="save">Save</button>
-        <input type="text" name="new">
-        <button type="submit" name="newItem" value="newItem">Add Item</button>
+        <div class="input-group mb-3 mt-3">
+            <input type="text" name="txtNewItem" class="form-control">
+            <button type="submit" name="btnNewItem" value="newItem" class="btn btn-outline-secondary">Add Item</button>
+            <button type="submit" name="btnChangeItem" value="save" class="btn btn-outline-secondary">Save</button>
+        </div>
     </form>
 {% endblock %}

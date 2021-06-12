@@ -6,10 +6,8 @@
     <form method="post" action="/create/" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button type="submit" name="save" class="btn btn-success">Create New</button>
-            </div>
-            {{ form.name }}
+            <input type="text" name="txtTodoList" placeholder="Todo List Name" class="form-control">
+            <button type="submit" name="save" class="btn btn-outline-secondary">Create New</button>
         </div>
     </form>
 {% endblock %}
