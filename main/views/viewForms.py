@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from main.models import ToDoList
+from main.models import TodoList
 
 
 def form_create_to_do_list(response):
@@ -9,13 +9,13 @@ def form_create_to_do_list(response):
         print(response.POST)
         txt = response.POST.get("txtTodoList")
         if len(txt) > 2:
-            todo_list = ToDoList.objects.create(name=response.POST.get("txtTodoList"))
+            todo_list = TodoList.objects.create(name=response.POST.get("txtTodoList"))
             return HttpResponseRedirect("/%i" % todo_list.id)
     return render(response, "main/create.html")
 
 
 def form_edit_to_do_list(response, id_):
-    to_do_list = ToDoList.objects.get(id=id_)
+    to_do_list = TodoList.objects.get(id=id_)
 
     if response.method == "POST":
         print(response.POST)

@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class ToDoList(models.Model):
+class TodoList(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -10,7 +10,7 @@ class ToDoList(models.Model):
 
 
 class Item(models.Model):
-    todolist = models.ForeignKey(ToDoList, on_delete=models.CASCADE)
+    todolist = models.ForeignKey(TodoList, on_delete=models.CASCADE)
     text = models.CharField(max_length=300)
     complete = models.BooleanField()
 
