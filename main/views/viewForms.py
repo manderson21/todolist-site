@@ -10,7 +10,7 @@ def form_create_to_do_list(response):
         txt = response.POST.get("txtTodoList")
         if len(txt) > 2:
             todo_list = TodoList.objects.create(name=response.POST.get("txtTodoList"))
-            return HttpResponseRedirect("/%i" % todo_list.id)
+            return HttpResponseRedirect("/app/list/%i" % todo_list.id)
     return render(response, "main/create.html")
 
 
