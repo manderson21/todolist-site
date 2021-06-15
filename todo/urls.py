@@ -9,12 +9,12 @@ urlpatterns = [
 
     # TODO: change home view to be a list
     path('app/list/', views.home, name="home"),
-    path('app/list/<int:id_>', views.form_edit_to_do_list, name="form_edit_to_do_list"),
+    path('app/list/<int:id_>', views.form_edit_todo, name="form_edit_to_do_list"),
 
     # TODO: Create today and later views/templates
     # path('app/today/', ),
     # path('app/later/'),
 
     # TODO: Change create view to a bootstrap modal
-    path("app/create/", views.form_create_to_do_list, name="form_create_to_do_list"),
+    path("app/create/", views.form_create_todo, name="form_create_to_do_list"),
 ]

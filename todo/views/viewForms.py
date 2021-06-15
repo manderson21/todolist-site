@@ -4,7 +4,7 @@ from django.shortcuts import render
 from todo.models import TodoList
 
 
-def form_create_to_do_list(response):
+def form_create_todo(response):
     if response.method == "POST":
         print(response.POST)
         txt = response.POST.get("txtTodoList")
@@ -14,7 +14,7 @@ def form_create_to_do_list(response):
     return render(response, "todo/create.html")
 
 
-def form_edit_to_do_list(response, id_):
+def form_edit_todo(response, id_):
     to_do_list = TodoList.objects.get(id=id_)
 
     if response.method == "POST":
