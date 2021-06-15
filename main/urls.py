@@ -16,5 +16,5 @@ urlpatterns = [
     # path('app/later/'),
 
     # TODO: Change create view to a bootstrap modal
-    path("app/create/", views.form_create_to_do_list, name="form_creat_to_do_list"),
+    path("app/create/", views.form_create_to_do_list, name="form_create_to_do_list"),
 ]
