@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1>{{ to_do_list.name }}</h1>
-    <form method="post" action="#" class="form-group">
+    <form method="POST" action="#" class="form-group">
         {% csrf_token %}
             {% for item in to_do_list.item_set.all %}
                 <div class="form-check mb-0 border-bottom">

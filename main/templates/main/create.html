@@ -3,7 +3,7 @@
 
 {% block content %}
     <h2>Create Page</h2>
-    <form method="post" action="/create/" class="form-group">
+    <form method="POST" action="/app/create/" class="form-group">
         {% csrf_token %}
         <div class="input-group mb-3">
             <input type="text" name="txtTodoList" placeholder="Todo List Name" class="form-control">
