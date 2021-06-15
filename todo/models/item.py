@@ -1,6 +1,6 @@
 from django.db import models
 
-from main.models.todo_list import TodoList
+from todo.models.todo_list import TodoList
 
 
 class Item(models.Model):

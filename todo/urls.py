@@ -1,7 +1,7 @@
 from django.urls import path
 from django.views.generic import RedirectView
 
-from main import views
+from todo import views
 
 urlpatterns = [
     path('', RedirectView.as_view(url="app/")),

@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from main.models import TodoList
+from todo.models import TodoList
 
 
 def form_create_to_do_list(response):
