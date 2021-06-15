@@ -11,7 +11,7 @@ def form_create_to_do_list(response):
         if len(txt) > 2:
             todo_list = TodoList.objects.create(name=response.POST.get("txtTodoList"))
             return HttpResponseRedirect("/app/list/%i" % todo_list.id)
-    return render(response, "main/create.html")
+    return render(response, "todo/create.html")
 
 
 def form_edit_to_do_list(response, id_):
@@ -33,4 +33,4 @@ def form_edit_to_do_list(response, id_):
             else:
                 print("invalid")
 
-    return render(response, "main/list.html", {"to_do_list": to_do_list})
+    return render(response, "todo/list.html", {"to_do_list": to_do_list})
